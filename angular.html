@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<body ng-app="">
+<div ng-controller="equalController">
+  {{eqObject}}
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+<script>
+var obj1 = {
+  key1: "value1",
+  key2: "value2",
+  key3: {a: "aa", b: "bb"}
+}
+
+var obj2 = {
+  key2: "value2",
+  key1: "value1",
+  key3: {a: "aa", b: "bb"}
+}
+function equalController($scope) {
+	$scope.eqObject = angular.equal(obj1, obj2) ? true : false;
+}
+</script>
+</body>
+</html>
